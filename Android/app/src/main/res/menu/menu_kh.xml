@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home_kh"
+            android:title="Trang chủ"
+            android:fontFamily="serif"
+            android:icon="@drawable/ic_home"/>
+        <item android:id="@+id/nav_booking_dat"
+            android:title="Các Booking đã đặt"
+            android:fontFamily="serif"
+            android:icon="@drawable/ic_banbida"/>
+    </group>
+
+    <item android:title="Tài khoản"  android:fontFamily="serif">
+        <menu>
+            <item android:id="@+id/nav_thongtintk_kh"
+                android:title="Thông tin tài khoản"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_person"/>
+            <item android:id="@+id/nav_thaydoipass_kh"
+                android:title="Thay đổi mật khẩu"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_lock"/>
+            <item android:id="@+id/nav_lichsu_kh"
+                android:title="Lịch sử"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_history"/>
+            <item android:id="@+id/nav_exit_kh"
+                android:title="Đăng xuất"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_exit"/>
+        </menu>
+    </item>
+
+</menu>

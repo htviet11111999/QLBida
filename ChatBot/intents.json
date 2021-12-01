@@ -1,0 +1,58 @@
+{"intents": [
+        {"tag": "meeting",
+         "patterns": ["hi", "chao ban", "hello"],
+         "responses": ["Hello!", "Chao ban, toi co the giup gi cho ban ?"],
+         "context_set": ""
+        },
+        {"tag": "goodbye",
+         "patterns": ["bye", "tam biet", "goodbye"],
+         "responses": ["Tam biet ban", "Tam biet ban, co van de gi thi nhan minh"],
+         "context_set": ""
+        },
+        {"tag": "thank",
+         "patterns": ["cam on", "toi cam on ban nhe", "thank you"],
+         "responses": ["Khong co gi dau ban", "Toi rat vui khi duoc giup ban"],
+         "context_set": ""
+        },
+        {"tag": "body",
+         "patterns": [ "toi muon hoi ve tu the choi bida", "tu the choi bida"],
+         "responses": ["Chan va hai vai rong bang nhau; Chan tru buoc ve phia truoc 1 buoc; Cam gay song song voi mat ban; Mat nhin thang"],
+         "context_set": ""
+        },
+        {"tag": "keep",
+         "patterns": ["cach giu co khi choi bida", "giu co"],
+         "responses": ["Tay cam luc vua phai, khong cam chat hay long qua, chi khi nao danh moi siet chat tay."],
+         "context_set": ""
+        },
+        {"tag": "see",
+         "patterns": ["cach ngam bong chuan", "toi muon hoi ve cach ngam bong chuan"],
+         "responses": ["Nhin bao quat cac vien bi tren ban. Mat nhin vao vien bi chu can danh de xac dinh luc. Duong di cua vien bi chu phai hop thanh 1 duong thang."],
+         "context_set": ""
+        },
+        {"tag": "vip",
+         "patterns": ["cach tro thanh nguoi choi chuyen nghiep","toi muon thanh nguoi choi chuyen nghiep"],
+         "responses": ["Cham chi luyen tap","Giao luu voi nhieu nguoi choi khac de co kinh nghiem","Hoc hoi tu nhung nguo choi gioi hon"],
+         "context_set": ""
+        },
+        {"tag": "tool",
+         "patterns": ["cac dung cu trong bida", "choi bida gom nhung cong cu nao", "nhung cong cu khi choi bida"],
+         "responses": ["Gang tay; Ban va bi; Gay bida"],
+         "context_set": ""
+        },
+        {"tag": "hand",
+         "patterns": ["nen chon gang tay the nao khi choi bida","gang tay choi bida"],
+         "responses": ["Tham hut mo hoi trong qua trinh choi"," Tang do bam tren gay Bida", "Giam ma sat giua tay va gay danh bida"],
+         "context_set": ""
+        },
+        {"tag": "table",
+         "patterns": ["nen chon ban choi the nao","ban choi bida"],
+         "responses": ["Loai pho bien hien nay la Ban bida lo. Loai ban nay co 3 kich thuoc: 7 feet, 8 feet va 9 feet. Neu choi tại gia thi ban co kich thuoc 7 – 8 feet la rat phu hop,  9 feet thuong su dung tai cac CLB lon"],
+         "context_set": ""
+        },
+        {"tag": "choose",
+         "patterns": ["nen chon gay choi the nao","gay choi bida"],
+         "responses": ["Nen chon gay chac chan, thuong lam bang go là tot nhat. Bot xoay giup cho dau gay dat chuan trong moi cu danh."],
+         "context_set": ""
+        }
+   ]
+}

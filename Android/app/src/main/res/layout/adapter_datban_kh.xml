@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/hinhbanBida_datban"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_banbida"
+        />
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp">
+        <TextView
+            android:id="@+id/tenban_datban"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên bàn"
+            android:fontFamily="serif"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/gia_datban"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giá theo tiếng"
+            android:fontFamily="serif"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/soluong_datban"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số lượng bàn còn lại"
+            android:fontFamily="serif"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

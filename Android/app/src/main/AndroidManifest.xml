@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bida">
+    <uses-permission android:name="Android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"
+        android:label=""
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Bida">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_api_key" />
+
+        <activity android:name=".BidaSplash"
+                  android:theme="@style/bidasplash"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ChatBot.ChatMain"></activity>
+        <activity android:name=".QuenMatKhau.NhapThongTin_QuenMKActivity"></activity>
+        <activity android:name=".QuenMatKhau.GuiMaOTP_Activity"></activity>
+        <activity android:name=".QuenMatKhau.ThayDoiMK_Activity"></activity>
+        <activity android:name=".DangKy.NhapThongTinDK_Activity"></activity>
+        <activity android:name=".DangKy.GuiMaOTP_DangKyActivity"></activity>
+        <activity android:name=".DangKy.TaoMK_Activity"></activity>
+        <activity android:name=".DangKy.ChonAvatar_Activity"></activity>
+        <activity android:name=".Menu_QTV"></activity>
+        <activity android:name=".fragment_qtv.ThemTaiKhoan"></activity>
+        <activity android:name=".fragment_qtv.SuaTaiKhoan"></activity>
+        <activity android:name=".fragment_qtv.ChiTietQuanLyTaiKhoan"></activity>
+        <activity android:name=".fragment_qtv.ChiTietQuanLyDiaDiem"></activity>
+        <activity android:name=".fragment_qtv.SuaDiaDiem"></activity>
+        <activity android:name=".fragment_qtv.ThemDiaDiem"></activity>
+        <activity android:name=".Menu_CT"></activity>
+        <activity android:name=".fragment_ct.ChiTietDiaDiem"></activity>
+        <activity android:name=".fragment_ct.SuaTTTK"></activity>
+        <activity android:name=".fragment_ct.CapNhatThongTinDiaDiem"></activity>
+        <activity android:name=".fragment_ct.ThemBanBida"></activity>
+        <activity android:name=".fragment_ct.ChiTietQuanLyBan"></activity>
+        <activity android:name=".fragment_ct.SuaBan"></activity>
+        <activity android:name=".fragment_ct.ThemNhanVien"></activity>
+        <activity android:name=".fragment_ct.ChiTietNhanVien"></activity>
+        <activity android:name=".fragment_ct.SuaNhanVien"></activity>
+        <activity android:name=".fragment_ct.TaoTaiKhoanNV"></activity>
+        <activity android:name=".fragment_ct.CTPN"></activity>
+        <activity android:name=".fragment_ct.CTB"></activity>
+        <activity android:name=".Menu_NV"></activity>
+        <activity android:name=".fragment_nv.ThemVatPham"></activity>
+        <activity android:name=".fragment_nv.SuaTTTK_NV"></activity>
+        <activity android:name=".fragment_nv.ChiTietVatPham"></activity>
+        <activity android:name=".fragment_nv.SuaVatPham"></activity>
+        <activity android:name=".fragment_nv.ThongTin1PhieuNhap"></activity>
+        <activity android:name=".fragment_nv.ChiTietPhieuNhap"></activity>
+        <activity android:name=".fragment_nv.ThemCTPhieuNhap"></activity>
+        <activity android:name=".fragment_nv.datbooking_nv"></activity>
+        <activity android:name=".fragment_nv.datvatpham_nv"></activity>
+        <activity android:name=".fragment_nv.them_ctbooking_nv"></activity>
+        <activity android:name=".fragment_nv.chitiet_Booking_nv"></activity>
+        <activity android:name=".fragment_nv.chitiet_datvatpham_nv"></activity>
+        <activity android:name=".fragment_nv.quetqrcode_xacthuc"></activity>
+        <activity android:name=".Menu_KH"></activity>
+        <activity android:name=".fragment_kh.ChiTietDiaDiem_KH"></activity>
+        <activity android:name=".fragment_kh.SuaTTTK_KH"></activity>
+        <activity android:name=".fragment_kh.DatBan_KH"></activity>
+        <activity android:name=".fragment_kh.DatVatPham"></activity>
+        <activity android:name=".fragment_kh.ThemCTBooking_vatpham"></activity>
+        <activity android:name=".fragment_kh.QRCode"></activity>
+        <activity android:name=".fragment_kh.ChiTiet_BookingDaDat"></activity>
+    </application>
+</manifest>

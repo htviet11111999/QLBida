@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAF9F9"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HOÀN THÀNH ĐẶT CHỖ"
+        android:fontFamily="serif"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"/>
+    <TextView
+        android:layout_marginTop="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đây là mã QR code của bạn"
+        android:fontFamily="serif"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/tieude"
+        android:layout_marginTop="85dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vui lòng trình ra để nhân viên kiểm tra"
+        android:fontFamily="serif"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:gravity="center"/>
+
+    <ImageView
+        android:id="@+id/qrcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tieude"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_banbida" />
+    <LinearLayout
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/qrcode"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/thoat_hoanthanhdatbooking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="THOÁT"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:fontFamily="serif"
+            android:background="@drawable/round_border"/>
+    </LinearLayout>
+
+</RelativeLayout>

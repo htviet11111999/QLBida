@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/qltk_ChiTiet"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CAC2C0"
+    tools:context=".MainActivity">
+    <TextView
+        android:layout_marginTop="30dp"
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="THÔNG TIN TÀI KHOẢN"
+        android:fontFamily="serif"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatar_qltknv"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_below="@+id/tv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/person" />
+
+    <LinearLayout
+        android:id="@+id/ln1"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/avatar_qltknv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/hoten_chitietQltknv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/avatar_qltknv"
+            android:text="Họ tên"
+            android:fontFamily="serif"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/sdt_chitietQltknv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số điện thoại"
+            android:fontFamily="serif"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+        <TextView
+            android:id="@+id/diachi_chitietQltknv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ"
+            android:fontFamily="serif"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/quyen_chitietQltknv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quyền"
+            android:fontFamily="serif"
+            android:padding="5dp"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/sua_qltknv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ln1"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/round_border"
+        android:fontFamily="serif"
+        android:text="CẬP NHẬT THÔNG TIN"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+</RelativeLayout>

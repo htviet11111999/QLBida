@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:text="THÊM ĐỊA ĐIỂM"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/addavatar"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_below="@+id/tv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/download" />
+
+    <LinearLayout
+        android:id="@+id/ln1"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addavatar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tên tiệm : "
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <EditText
+                android:id="@+id/add_tentiem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/avatar_qltk"
+                android:hint="Nhập tên tiệm"
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Địa chỉ : "
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <EditText
+                android:id="@+id/add_diachi_qldd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nhập địa chỉ"
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kinh độ : "
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <EditText
+                android:id="@+id/add_kinhdo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nhập kinh độ"
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vĩ độ : "
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <EditText
+                android:id="@+id/add_vido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nhập vĩ độ"
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trạng thái : "
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                />
+
+            <Spinner
+                android:id="@+id/spn_tt"
+                android:layout_width="100dp"
+                android:padding="5dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvi_tt"
+                android:layout_marginLeft="20dp"
+                android:padding="5dp"
+                android:textSize="17sp"
+                android:fontFamily="serif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="trạng thái" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Họ tên chủ : "
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                />
+            <Spinner
+                android:id="@+id/spn_chutiem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tvi_tenct"
+            android:layout_marginLeft="115dp"
+            android:fontFamily="serif"
+            android:padding="5dp"
+            android:textSize="17sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên chủ tiệm"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ghi chú : "
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                />
+            <EditText
+                android:id="@+id/add_ghichu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nhập ghi chú"
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ln1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/addHoanthanh_qldd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HOÀN THÀNH"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:background="@drawable/round_border"/>
+        <Button
+            android:id="@+id/addThoat_qldd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="THOÁT"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:fontFamily="serif"
+            android:background="@drawable/round_border"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

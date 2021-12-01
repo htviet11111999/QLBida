@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAF9F9"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:text="CẬP NHẬT THÔNG TIN VẬT PHẨM"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/updatehinh_qlk"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_below="@+id/tv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_banbida" />
+
+    <ImageView
+        android:id="@+id/update_hinh_qlk"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/tv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@+id/updatehinh_qlk"
+        android:src="@drawable/ic_updateimage" />
+
+    <LinearLayout
+        android:id="@+id/ln1"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/updatehinh_qlk"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tên vật phẩm : "
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <EditText
+                android:id="@+id/update_tenvatpham"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nhập tên vật phẩm"
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đơn giá : "
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <EditText
+                android:id="@+id/update_dongia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nhập dơn giá"
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Số lượng"
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <EditText
+                android:id="@+id/update_soluong_qlk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nhập số lượng"
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ln1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/updateHoanthanh_qlk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HOÀN THÀNH"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:background="@drawable/round_border"/>
+        <Button
+            android:id="@+id/updateThoat_qlk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="THOÁT"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:fontFamily="serif"
+            android:background="@drawable/round_border"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

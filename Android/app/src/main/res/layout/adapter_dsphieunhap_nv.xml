@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/hinhvatpham"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/phieunhap"
+        />
+    <LinearLayout
+        android:layout_marginTop="9dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp">
+        <TextView
+            android:id="@+id/ngaylap_dsphieunhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ngày lập"
+            android:fontFamily="serif"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/hotennhanvien_dsphieunhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nhân viên lập"
+            android:fontFamily="serif"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/tienthanhtoan_dsphieunhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tiền thanh toán"
+            android:fontFamily="serif"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/trangthai_dsphieunhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trạng thái"
+            android:fontFamily="serif"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <SearchView
+        android:id="@+id/sv_qlvp"
+        android:layout_margin="10dp"
+        android:queryHint="Tìm kiếm..."
+        android:iconifiedByDefault="false"
+        android:elevation="5dp"
+        android:background="@drawable/bg_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:fontFamily="serif"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+    <Button
+        android:id="@+id/ThemVP"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:drawableLeft="@drawable/ic_addvatpham"
+        android:background="@drawable/round_border"
+        android:text="Thêm vật phẩm"
+        android:fontFamily="serif"
+        android:textStyle="bold"/>
+</LinearLayout>

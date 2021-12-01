@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C7CAC0"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:text="THÊM CHI TIẾT PHIẾU NHẬP"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:id="@+id/ln1"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tên vật phẩm : "
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <EditText
+                android:id="@+id/addctpn_tenvatpham"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nhập tên vật phẩm"
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <Button
+                android:id="@+id/btn_kt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="KT"
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:background="#B2B5AD"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hình ảnh : "
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <ImageView
+                android:id="@+id/addctpn_hinh"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_below="@+id/tv"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/ic_addvatpham" />
+
+            <ImageView
+                android:id="@+id/add_hinhbida_ctpn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/tv"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:layout_toRightOf="@+id/addctpn_hinh"
+                android:src="@drawable/ic_updateimage" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đơn giá : "
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <EditText
+                android:id="@+id/addctpn_dongia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nhập đơn giá"
+                android:inputType="number"
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Số lượng"
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+            <EditText
+                android:id="@+id/addctpn_soluong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Nhập số lượng"
+                android:inputType="number"
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ln1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/addHoanthanh_ctpn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HOÀN THÀNH"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:background="@drawable/round_border"/>
+        <Button
+            android:id="@+id/addThoat_ctpn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="THOÁT"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:fontFamily="serif"
+            android:background="@drawable/round_border"/>
+    </LinearLayout>
+</RelativeLayout>

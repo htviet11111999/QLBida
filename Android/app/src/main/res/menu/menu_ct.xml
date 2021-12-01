@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home_ct"
+            android:title="Trang chủ"
+            android:fontFamily="serif"
+            android:icon="@drawable/ic_home"/>
+        <item android:id="@+id/nav_qlbanBida_ct"
+            android:title="Quản lý bàn Bida"
+            android:fontFamily="serif"
+            android:icon="@drawable/ic_banbida"/>
+        <item android:id="@+id/nav_qlnhanvien_ct"
+            android:title="Quản lý nhân viên"
+            android:fontFamily="serif"
+            android:icon="@drawable/ic_quanlytaikhoan"/>
+    </group>
+
+    <item android:title="Kho"  android:fontFamily="serif">
+        <menu>
+            <item android:id="@+id/nav_danhsachvatpham"
+                android:title="Danh sách vật phẩm"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_vatpham"/>
+            <item android:id="@+id/nav_danhsachphieunhap"
+                android:title="Danh sách phiếu nhập"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_updateimage"/>
+            <item android:id="@+id/nav_danhsachBooking"
+                android:title="Danh sách Booking"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_booking"/>
+        </menu>
+    </item>
+
+    <item android:title="Thống kê"  android:fontFamily="serif">
+        <menu>
+            <item android:id="@+id/nav_thongkeSapHet"
+                android:title="Thống kê vật phẩm sắp hết"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_tksaphet"/>
+        </menu>
+    </item>
+
+    <item android:title="Tài khoản"  android:fontFamily="serif">
+        <menu>
+            <item android:id="@+id/nav_thongtintk"
+                android:title="Thông tin tài khoản"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_person"/>
+            <item android:id="@+id/nav_thaydoipass"
+                android:title="Thay đổi mật khẩu"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_lock"/>
+            <item android:id="@+id/nav_lichsu_ct"
+                android:title="Lịch sử"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_history"/>
+            <item android:id="@+id/nav_exit_ct"
+                android:title="Đăng xuất"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_exit"/>
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home_nv"
+            android:title="Trang chủ"
+            android:fontFamily="serif"
+            android:icon="@drawable/ic_home"/>
+    </group>
+
+    <item android:title="Kho"  android:fontFamily="serif">
+        <menu>
+            <item android:id="@+id/nav_vatpham_nv"
+                android:title="Danh sách vật phẩm"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_tksaphet"/>
+            <item android:id="@+id/nav_danhsachphieunhap_nv"
+                android:title="Danh sách phiếu nhập"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_updateimage"/>
+            <item android:id="@+id/nav_danhsachBooking_nv"
+                android:title="Danh sách Booking"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_booking"/>
+        </menu>
+    </item>
+
+    <item android:title="Tài khoản"  android:fontFamily="serif">
+        <menu>
+            <item android:id="@+id/nav_thongtintk_nv"
+                android:title="Thông tin tài khoản"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_person"/>
+            <item android:id="@+id/nav_thaydoipass_nv"
+                android:title="Thay đổi mật khẩu"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_lock"/>
+            <item android:id="@+id/nav_lichsu_nv"
+                android:title="Lịch sử"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_history"/>
+            <item android:id="@+id/nav_exit_nv"
+                android:title="Đăng xuất"
+                android:fontFamily="serif"
+                android:icon="@drawable/ic_exit"/>
+        </menu>
+    </item>
+
+</menu>

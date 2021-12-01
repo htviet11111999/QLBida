@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/hinhctpn"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/detail"
+        />
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp">
+        <TextView
+            android:id="@+id/tenvatpham_ctphieunhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên vật phẩm"
+            android:fontFamily="serif"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/soluong_ctphieunhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Số lượng"
+            android:fontFamily="serif"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/dongia_ctphieunhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đơn giá"
+            android:fontFamily="serif"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_xoaCT"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xóa"
+        android:fontFamily="serif"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:background="@drawable/round_border"/>
+
+
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/hinhbooking_dat"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/booking" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp">
+        <TextView
+            android:id="@+id/tenkhachhang_dsbooking_dat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên khách hàng"
+            android:fontFamily="serif"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/ngay_dsbooking_dat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ngày"
+                android:fontFamily="serif"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                />
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:id="@+id/gio_dsbooking_dat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giờ"
+                android:fontFamily="serif"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tienthanhtoan_dsbooking_dat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tiền thanh toán"
+            android:fontFamily="serif"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/trangthai_dsbooking_dat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trạng thái"
+            android:fontFamily="serif"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+
+</LinearLayout>

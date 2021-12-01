@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="20dp">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/download"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp">
+        <TextView
+            android:id="@+id/tentiemm_qldd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên tiệm"
+            android:fontFamily="serif"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/diachi_qldd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:text="Địa chỉ"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/hotenchu_qldd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Họ tên chủ"
+            android:fontFamily="serif"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+</LinearLayout>

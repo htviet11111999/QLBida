@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:Android="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="20dp">
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/myMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <SearchView
+        android:id="@+id/sv_location"
+        android:layout_margin="10dp"
+        android:queryHint="Tìm kiếm..."
+        android:iconifiedByDefault="false"
+        android:elevation="5dp"
+        android:background="@drawable/bg_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+</RelativeLayout>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "763522748719",
+    "project_id": "centering-line-327504",
+    "storage_bucket": "centering-line-327504.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763522748719:android:fe1083d7bd16cf214c51da",
+        "android_client_info": {
+          "package_name": "com.example.bida"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763522748719-dklhkcq2ovdr0gcsc95fbiqpnceufh8e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bida",
+            "certificate_hash": "8bfad5d10167c5d738f89ce570a90039f8def9ea"
+          }
+        },
+        {
+          "client_id": "763522748719-0upoijcij0r7rrgsg22efc9nj6ue924u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwC1-HDhSber8R2EPNsksJ4ePufcTrAhk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "763522748719-0upoijcij0r7rrgsg22efc9nj6ue924u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:Android="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="20dp">
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/myMap_kh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <SearchView
+        android:id="@+id/sv_location_kh"
+        android:layout_margin="10dp"
+        android:queryHint="Tìm kiếm..."
+        android:iconifiedByDefault="false"
+        android:elevation="5dp"
+        android:background="@drawable/bg_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <Button
+        android:id="@+id/Chat"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_below="@+id/sv_location_kh"
+        android:backgroundTint="@color/white"
+        android:drawableLeft="@drawable/ic_chat"
+        android:background="@drawable/round_border"
+        android:text="Tư vấn cách chơi"
+        android:fontFamily="serif"
+        android:textStyle="bold"/>
+</RelativeLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/person" />
+
+    <TextView
+        android:id="@+id/tv_guiOTP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="35dp"
+        android:gravity="center"
+        android:fontFamily="serif"
+        android:text="Nhập mã OTP vừa được gửi đến số điện thoại của bạn !"
+        android:textAlignment="center"
+        android:textSize="21sp"
+        android:textStyle="bold" />
+
+    <com.chaos.view.PinView
+        android:id="@+id/pinview_DangKy"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_guiOTP"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="35dp"
+        android:cursorVisible="true"
+        android:inputType="number"
+        android:textSize="18sp"
+        app:itemCount="6"
+        app:itemHeight="48dp"
+        app:itemRadius="4dp"
+        app:lineColor="#63070707" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pinview_DangKy"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/resend_DangKy"
+        android:text="Nếu bạn không nhận được mã."
+        android:fontFamily="serif"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/resend_DangKy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pinview_DangKy"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="45dp"
+        android:text="Gửi lại"
+        android:fontFamily="serif"
+        android:textColor="#f56258"
+        android:textSize="16sp" />
+    -
+
+    <Button
+        android:id="@+id/verifybutton_DangKy"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/pinview_DangKy"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/round_bg"
+        android:text="XÁC THỰC"
+        android:fontFamily="serif"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <LinearLayout android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="THỐNG KÊ VẬT PHẨM SẮP HẾT"
+            android:fontFamily="serif"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="center"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="80dp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_gravity="center">
+    <com.github.mikephil.charting.charts.PieChart
+        android:layout_height="500dp"
+        android:layout_width="match_parent"
+        android:id="@+id/TK_vatphamsaphet"/>
+    </LinearLayout>
+
+</LinearLayout>

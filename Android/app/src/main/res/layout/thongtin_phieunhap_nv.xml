@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/qltk_ChiTiet"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FBFAFA"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:text="THÔNG TIN PHIẾU NHẬP"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_below="@+id/tv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/phieunhap" />
+
+    <LinearLayout
+        android:id="@+id/ln1"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/avatar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ngaylap_phieunhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ngày lập"
+            android:fontFamily="serif"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+        <TextView
+            android:id="@+id/hotennhanvien_phieunhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Họ tên nhâp viên"
+            android:fontFamily="serif"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+        <TextView
+            android:id="@+id/tienthanhtoan_phieunhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tiền thanh toán"
+            android:fontFamily="serif"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/trangthai_phieunhap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trạng thái"
+            android:fontFamily="serif"
+            android:padding="5dp"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ln1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/thanhtoan_phieunhap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="THANH TOÁN"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:background="@drawable/round_border"/>
+        <Button
+            android:id="@+id/chitiet_phieunhap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CHI TIẾT"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:background="@drawable/round_border"/>
+        <Button
+            android:id="@+id/xoa_phieunhap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="XÓA PHIẾU NHẬP"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:background="@drawable/round_border"/>
+        <Button
+            android:id="@+id/thoat_phieunhap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="THOÁT"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:fontFamily="serif"
+            android:background="@drawable/round_border"/>
+    </LinearLayout>
+</RelativeLayout>
