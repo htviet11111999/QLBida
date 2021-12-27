@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                                         gio = Integer.parseInt(strArr[0]) + 12;
                                     }
                                     else gio = Integer.parseInt(strArr[0]);
-                                    if(ngay < ngayhientai && thang <= thanghientai && nam <= namhientai && Math.abs(gio*60+phut - giohientai*60+phuthientai) > 30 && bo.get(i).getTrangthai() != 4){
+                                    if( (ngay < ngayhientai && thang <= thanghientai && nam <= namhientai  && bo.get(i).getTrangthai() != 4)){
                                         Booking book = bo.get(i);
                                         ApiService.apiService.lay1BanBida(book.getIddiadiem(),book.getIdban())
                                                 .enqueue(new Callback<BanBida>() {

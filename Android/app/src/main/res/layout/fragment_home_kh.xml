@@ -27,7 +27,7 @@
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/ic_chat"
         android:background="@drawable/round_border"
-        android:text="Tư vấn cách chơi"
+        android:text="Tư vấn"
         android:fontFamily="serif"
         android:textStyle="bold"/>
 </RelativeLayout>

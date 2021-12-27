@@ -10,7 +10,7 @@ public class Booking {
     private int trangthai;
     private int idnhanvien;
     private String tennhanvien;
-    private int tienthanhtoan;
+    private double tienthanhtoan;
     private int iddiadiem;
     private String qrcode;
     private int slnguoi;
@@ -21,7 +21,7 @@ public class Booking {
     private String giochoi;
     private String giochoithat;
 
-    public Booking(int id, int idkhachhang, String tenkhachhang, String sdt, String ngay,String gio, int trangthai, int idnhanvien, String tennhanvien, int tienthanhtoan, int iddiadiem, String qrcode, int slnguoi, int idban, String tenban, int giaban, String ngaychoi, String giochoi,String giochoithat) {
+    public Booking(int id, int idkhachhang, String tenkhachhang, String sdt, String ngay,String gio, int trangthai, int idnhanvien, String tennhanvien, double tienthanhtoan, int iddiadiem, String qrcode, int slnguoi, int idban, String tenban, int giaban, String ngaychoi, String giochoi,String giochoithat) {
         this.id = id;
         this.idkhachhang = idkhachhang;
         this.tenkhachhang = tenkhachhang;
@@ -168,11 +168,11 @@ public class Booking {
         this.tennhanvien = tennhanvien;
     }
 
-    public int getTienthanhtoan() {
+    public double getTienthanhtoan() {
         return tienthanhtoan;
     }
 
-    public void setTienthanhtoan(int tienthanhtoan) {
+    public void setTienthanhtoan(double tienthanhtoan) {
         this.tienthanhtoan = tienthanhtoan;
     }
 

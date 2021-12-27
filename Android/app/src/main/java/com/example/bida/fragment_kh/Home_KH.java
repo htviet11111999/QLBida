@@ -1,7 +1,19 @@
 package com.example.bida.fragment_kh;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +23,12 @@ import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.bida.Api.ApiService;
-import com.example.bida.ChatBot.ChatMain;
+import com.example.bida.ChatBot.MainChatBot;
+import com.example.bida.Menu_KH;
 import com.example.bida.Model.DiaDiem;
 import com.example.bida.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -22,25 +36,26 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Home_KH extends Fragment {
-    public ArrayList <DiaDiem> data = new ArrayList<>();
+public class Home_KH extends Fragment{
+    public ArrayList<DiaDiem> data = new ArrayList<>();
     MapView mMapView;
     SearchView searchView;
     private GoogleMap googleMap;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-
         ApiService.apiService.layDSDiaDiem()
                 .enqueue(new Callback<ArrayList<DiaDiem>>() {
                     @Override
@@ -50,7 +65,7 @@ public class Home_KH extends Fragment {
 
                     @Override
                     public void onFailure(Call<ArrayList<DiaDiem>> call, Throwable t) {
-                        Toast.makeText(getActivity(),"Gọi API thất bại !",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Gọi API thất bại !", Toast.LENGTH_SHORT).show();
                     }
                 });
         View rootView = inflater.inflate(R.layout.fragment_home_kh, container, false);
@@ -58,11 +73,12 @@ public class Home_KH extends Fragment {
         btn_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), ChatMain.class);
+                Intent intent = new Intent(getActivity(), MainChatBot.class);
+                intent.putExtra("number", Menu_KH.sdt);
                 startActivity(intent);
             }
         });
-        searchView =(SearchView) rootView.findViewById(R.id.sv_location_kh);
+        searchView = (SearchView) rootView.findViewById(R.id.sv_location_kh);
         mMapView = (MapView) rootView.findViewById(R.id.myMap_kh);
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume(); // needed to get the map to display immediately
@@ -75,7 +91,7 @@ public class Home_KH extends Fragment {
         mMapView.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(GoogleMap mMap) {
-                for(int i=0 ;i<data.size();i++){
+                for (int i = 0; i < data.size(); i++) {
                     googleMap = mMap;
                     // For dropping a marker at a point on the Map
                     LatLng sydney = new LatLng(data.get(i).getKinhdo(), data.get(i).getVido());
@@ -87,10 +103,10 @@ public class Home_KH extends Fragment {
                     mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                         @Override
                         public boolean onMarkerClick(@NonNull Marker marker) {
-                            for(int v =0; v<data.size();v++){
-                                if (marker.getPosition().latitude == data.get(v).getKinhdo() && marker.getPosition().longitude == data.get(v).getVido()){
+                            for (int v = 0; v < data.size(); v++) {
+                                if (marker.getPosition().latitude == data.get(v).getKinhdo() && marker.getPosition().longitude == data.get(v).getVido()) {
                                     Intent intent = new Intent(getActivity(), ChiTietDiaDiem_KH.class);
-                                    intent.putExtra("id",data.get(v).getId());
+                                    intent.putExtra("id", data.get(v).getId());
                                     startActivity(intent);
                                     break;
                                 }
@@ -107,8 +123,8 @@ public class Home_KH extends Fragment {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 String location = searchView.getQuery().toString();
-                for(int i =0 ; i< data.size(); i++){
-                    if(location.equals(data.get(i).getTen())){
+                for (int i = 0; i < data.size(); i++) {
+                    if (location.equals(data.get(i).getTen())) {
                         LatLng sydney = new LatLng(data.get(i).getKinhdo(), data.get(i).getVido());
                         // For zooming automatically to the location of the marker
                         CameraPosition cameraPosition = new CameraPosition.Builder().target(sydney).zoom(20).build();
@@ -150,6 +166,4 @@ public class Home_KH extends Fragment {
         super.onLowMemory();
         mMapView.onLowMemory();
     }
-
-
 }

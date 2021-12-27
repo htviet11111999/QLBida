@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +46,7 @@ public class ThemDiaDiem extends AppCompatActivity {
 
     EditText edt_ten, edt_kinhdo, edt_vido, edt_diachi, edt_ghichu;
     Spinner spn_chutiem , spn_trangthai;
+    RadioButton rd_khongco, rd_trongnha, rd_cobai;
     TextView tv_chutiem, tv_trangthai;
     Button btn_Hoanthanh, btn_Thoat;
     @Override
@@ -61,6 +63,9 @@ public class ThemDiaDiem extends AppCompatActivity {
         edt_vido = (EditText) findViewById(R.id.add_vido);
         edt_diachi = (EditText) findViewById(R.id.add_diachi_qldd);
         edt_ghichu = (EditText) findViewById(R.id.add_ghichu);
+        rd_khongco = (RadioButton) findViewById(R.id.radio_khongco_add);
+        rd_trongnha = (RadioButton) findViewById(R.id.radio_trongnha_add);
+        rd_cobai = (RadioButton) findViewById(R.id.radio_cobai_add);
         btn_Hoanthanh = (Button) findViewById(R.id.addHoanthanh_qldd);
         btn_Thoat = (Button) findViewById(R.id.addThoat_qldd);
 
@@ -200,6 +205,9 @@ public class ThemDiaDiem extends AppCompatActivity {
         dd.setIdchu(Integer.valueOf(machutiem));
         dd.setHotenchu(tv_chutiem.getText().toString());
         dd.setGhichu(edt_ghichu.getText().toString());
+        if(rd_khongco.isChecked()) dd.setBaigiuxe(1);
+        else if(rd_trongnha.isChecked()) dd.setBaigiuxe(2);
+        else dd.setBaigiuxe(3);
         return dd;
     }
 }

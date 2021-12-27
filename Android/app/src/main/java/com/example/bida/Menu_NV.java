@@ -20,7 +20,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.bida.Adapter.QuanLyKhoAdapter;
 import com.example.bida.Api.ApiService;
+import com.example.bida.Model.Kho;
+import com.example.bida.Model.NhanVien;
 import com.example.bida.Model.TaiKhoan;
 import com.example.bida.fragment_ct.Home_CT;
 import com.example.bida.fragment_ct.QuanLyBanBida;
@@ -48,6 +51,7 @@ import retrofit2.Response;
 
 public class Menu_NV extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     ArrayList<TaiKhoan> data = new ArrayList<>();
+    ArrayList<NhanVien> nv = new ArrayList<>();
     private static final int FRAGMENT_HOME= 0;
     private static final int FRAGMENT_KHO= 1;
     private static final int FRAGMENT_DSPN= 2;
@@ -57,6 +61,7 @@ public class Menu_NV extends AppCompatActivity implements NavigationView.OnNavig
     private static final int FRAGMENT_LS= 6;
     public static String sdt;
     public static int manhanvien;
+    public static int idd;
     private NavigationView mNavidationView;
 
     private int mCurrentFragment = FRAGMENT_HOME;
@@ -78,6 +83,24 @@ public class Menu_NV extends AppCompatActivity implements NavigationView.OnNavig
 
         Toolbar toolbar = findViewById(R.id.toolbar_nv);
         setSupportActionBar(toolbar);
+
+        ApiService.apiService.layDSNVToan()
+                .enqueue(new Callback<ArrayList<NhanVien>>() {
+                    @Override
+                    public void onResponse(Call<ArrayList<NhanVien>> call, Response<ArrayList<NhanVien>> response) {
+                        nv = response.body();
+                        for (int i =0; i< nv.size(); i++){
+                            if (nv.get(i).getSdt().equals(Menu_NV.sdt)==true){
+                                idd = nv.get(i).getIddiadiem();
+                                break;
+                            }
+                        }
+                    }
+                    @Override
+                    public void onFailure(Call<ArrayList<NhanVien>> call, Throwable t) {
+                        Toast.makeText(Menu_NV.this,"Gọi API thất bại !",Toast.LENGTH_SHORT).show();
+                    }
+                });
 
         mDrawerLayout = findViewById(R.id.drawer_layout_nv);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,mDrawerLayout,toolbar,

@@ -23,7 +23,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ChiTietDiaDiem extends AppCompatActivity {
-    TextView tv_tentiem, tv_diachi, tv_kinhdo, tv_vido, tv_trangthai,tv_ghichu,tv_hotenchu;
+    TextView tv_tentiem, tv_diachi, tv_kinhdo, tv_vido, tv_trangthai,tv_ghichu,tv_hotenchu, tv_baigiuxe;
     Button btn_sua,  btn_thoat;
     int ma;
     @Override
@@ -41,6 +41,7 @@ public class ChiTietDiaDiem extends AppCompatActivity {
         tv_trangthai = (TextView) findViewById(R.id.trangthai_chitietQldd_ct);
         tv_ghichu = (TextView) findViewById(R.id.ghichu_chitietQldd_ct);
         tv_hotenchu = (TextView) findViewById(R.id.hotenchu_chitietQldd_ct);
+        tv_baigiuxe = (TextView) findViewById(R.id.baigiuxe_chitietQldd_ct);
         btn_sua = (Button) findViewById(R.id.sua_qldd_ct);
         btn_thoat = (Button) findViewById(R.id.thoat_qldd_ct);
 
@@ -59,6 +60,11 @@ public class ChiTietDiaDiem extends AppCompatActivity {
                         tv_trangthai.setText(String.format("Trạng thái : %s", tt));
                         tv_ghichu.setText(String.format("Ghi chú : %s", d.getGhichu()));
                         tv_hotenchu.setText(String.format("Họ tên chủ : %s", d.getHotenchu()));
+                        String g ="";
+                        if(d.getBaigiuxe()== 1) g = "Không có bãi giữ xe";
+                        else if(d.getBaigiuxe() == 2) g ="Trong nhà";
+                        else g = "Có bãi giữ xe";
+                        tv_baigiuxe.setText(String.format("Bãi giữ xe : %s", g));
                     }
 
                     @Override

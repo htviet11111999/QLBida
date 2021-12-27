@@ -63,7 +63,8 @@ public class chitiet_datvatpham_nv extends AppCompatActivity {
         btn_them.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(chitiet_datvatpham_nv.this, them_ctbooking_nv.class);
+                Intent intent = new Intent(chitiet_datvatpham_nv.this, them_ctbooking.class);
+                intent.putExtra("id", chitiet_Booking_nv.id);
                 startActivity(intent);
             }
         });
@@ -162,7 +163,10 @@ public class chitiet_datvatpham_nv extends AppCompatActivity {
                 return false;
             }
         });
-        ApiService.apiService.layDSCTBooking(chitiet_Booking_nv.id)
+        int ma;
+        Intent intent = getIntent();
+        ma= intent.getIntExtra("ma", 0);
+        ApiService.apiService.layDSCTBooking(ma)
                 .enqueue(new Callback<ArrayList<CTBooking>>() {
                     @Override
                     public void onResponse(Call<ArrayList<CTBooking>> call, Response<ArrayList<CTBooking>> response) {

@@ -22,7 +22,6 @@ import com.example.bida.Adapter.QuanLyDiaDiemAdapter;
 import com.example.bida.Adapter.QuanLyKhoAdapter;
 import com.example.bida.Adapter.QuanLyTaiKhoanAdapter;
 import com.example.bida.Api.ApiService;
-import com.example.bida.ChatBot.ChatMain;
 import com.example.bida.MainActivity;
 import com.example.bida.Menu_CT;
 import com.example.bida.Menu_KH;
@@ -65,20 +64,30 @@ public class CacBookingDaDat extends ListFragment {
                         int ngay = calendar.get(Calendar.DATE);
                         int thang  = calendar.get(Calendar.MONTH) + 1;
                         int nam  = calendar.get(Calendar.YEAR);
-                        int gio = calendar.get(Calendar.HOUR);
+                        int gio = 0;
                         int phut = calendar.get(Calendar.MINUTE);
+                        int td = calendar.get(Calendar.AM_PM);
+                        if(td == 1){
+                            gio = calendar.get(Calendar.HOUR) + 12;
+                        }
+                        else gio =calendar.get(Calendar.HOUR);
                         for (int i = 0; i< booking.size(); i++){
                             if (booking.get(i).getIdkhachhang() == Menu_KH.makhachhang && booking.get(i).getTrangthai()==2){
-                                String s=booking.get(i).getNgay();
+                                String s=booking.get(i).getNgaychoi();
                                 String strArrtmp[]=s.split("/");
                                 int ngaydat=Integer.parseInt(strArrtmp[0]);
                                 int thangdat=Integer.parseInt(strArrtmp[1]);
                                 int namdat=Integer.parseInt(strArrtmp[2]);
-                                String ss=booking.get(i).getGio();
+                                String ss=booking.get(i).getGiochoi();
                                 String strArr[]=ss.split(":");
-                                int giodat=Integer.parseInt(strArr[0]);
                                 String strArr1[]=strArr[1].split(" ");
                                 int phutdat = Integer.parseInt(strArr1[0]);
+                                String tdd = strArr1[1];
+                                int giodat = 0;
+                                if(tdd.equals("PM")==true ){
+                                    giodat = Integer.parseInt(strArr[0]) + 12;
+                                }
+                                else giodat = Integer.parseInt(strArr[0]);
                                 int thoigian = Math.abs(gio*60 + phut - giodat*60 - phutdat);
                                 if (  (thangdat >= thang && namdat >= nam) || (ngaydat >= ngay && thangdat == thang && namdat >= nam)  || (ngaydat >= ngay && thangdat >= thang && namdat >= nam) || ( ngaydat == ngay && thangdat == thang && namdat == nam && thoigian >=30 ) ){
                                     bookingchuaxacnhan.add(booking.get(i));

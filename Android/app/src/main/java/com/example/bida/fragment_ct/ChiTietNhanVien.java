@@ -95,9 +95,11 @@ public class ChiTietNhanVien extends AppCompatActivity {
                     public void onResponse(Call<ArrayList<TaiKhoan>> call, Response<ArrayList<TaiKhoan>> response) {
                         data = response.body();
                         for (int i =0; i< data.size(); i++){
-                            if (nv.getSdt().equals(data.get(i).getSdt())== true){
-                                btn_taotk.setVisibility(View.GONE);
-                                break;
+                            String sd = data.get(i).getSdt();
+                            if (sd != null) {
+                                if (nv.getSdt().equals(sd) == true) {
+                                    btn_taotk.setVisibility(View.GONE);
+                                }
                             }
                         }
                     }

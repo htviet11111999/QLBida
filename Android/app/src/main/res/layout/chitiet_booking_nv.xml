@@ -68,7 +68,7 @@
             android:id="@+id/tienthanhtoan_booking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tiền thanh toán"
+            android:text="Tiền dịch vụ"
             android:fontFamily="serif"
             android:padding="5dp"
             android:textColor="@color/black"
@@ -99,6 +99,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Trạng thái"
+            android:fontFamily="serif"
+            android:padding="5dp"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/tienthuc_booking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="serif"
             android:padding="5dp"
             android:textSize="17sp"
@@ -139,16 +148,6 @@
             android:text="CHI TIẾT"
             android:fontFamily="serif"
             android:textStyle="bold"
-            android:textSize="18sp"
-            android:background="@drawable/round_border"/>
-        <Button
-            android:id="@+id/xoa_booking"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="HỦY BOOKING"
-            android:fontFamily="serif"
-            android:textStyle="bold"
-            android:layout_marginTop="5dp"
             android:textSize="18sp"
             android:background="@drawable/round_border"/>
         <Button

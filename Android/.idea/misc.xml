@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Bida/app/src/main/res/drawable/bg_search.xml" value="0.2203125" />
         <entry key="..\:/Bida/app/src/main/res/drawable/bg_splash.xml" value="0.2203125" />
+        <entry key="..\:/Bida/app/src/main/res/drawable/ic_location.xml" value="0.1771689497716895" />
         <entry key="..\:/Bida/app/src/main/res/drawable/ic_person.xml" value="0.2203125" />
         <entry key="..\:/Bida/app/src/main/res/drawable/ic_wave.xml" value="0.2203125" />
         <entry key="..\:/Bida/app/src/main/res/drawable/network_security_config.xml" value="0.2046875" />
@@ -35,10 +36,17 @@
         <entry key="..\:/Bida/app/src/main/res/layout/capnhatthongtin_qldd.xml" value="0.22" />
         <entry key="..\:/Bida/app/src/main/res/layout/capnhatthongtin_qlk_nv.xml" value="0.25" />
         <entry key="..\:/Bida/app/src/main/res/layout/capnhatthongtin_qltk.xml" value="0.22" />
-        <entry key="..\:/Bida/app/src/main/res/layout/chatbot.xml" value="0.18" />
+        <entry key="..\:/Bida/app/src/main/res/layout/chatbot.xml" value="0.25" />
+        <entry key="..\:/Bida/app/src/main/res/layout/chatbot_baigiuxe.xml" value="0.25" />
+        <entry key="..\:/Bida/app/src/main/res/layout/chatbot_dichvuanuong.xml" value="0.25" />
+        <entry key="..\:/Bida/app/src/main/res/layout/chatbot_khonggian.xml" value="0.22" />
+        <entry key="..\:/Bida/app/src/main/res/layout/chatbot_noigannhat.xml" value="0.1" />
+        <entry key="..\:/Bida/app/src/main/res/layout/chatbot_soluongnguoi.xml" value="0.25" />
+        <entry key="..\:/Bida/app/src/main/res/layout/chatbox.xml" value="0.10552536231884058" />
         <entry key="..\:/Bida/app/src/main/res/layout/chitiet_booking_dadat_kh.xml" value="0.25" />
         <entry key="..\:/Bida/app/src/main/res/layout/chitiet_booking_nv.xml" value="0.25" />
         <entry key="..\:/Bida/app/src/main/res/layout/chitiet_datvatpham_booking_nv.xml" value="0.15579710144927536" />
+        <entry key="..\:/Bida/app/src/main/res/layout/chitiet_datvatpham_khidangchoi.xml" value="0.1" />
         <entry key="..\:/Bida/app/src/main/res/layout/chitiet_phieunhap_nv.xml" value="0.18" />
         <entry key="..\:/Bida/app/src/main/res/layout/chitiet_quanlyban_ct.xml" value="0.25" />
         <entry key="..\:/Bida/app/src/main/res/layout/chitiet_quanlydiadiem_qtv.xml" value="0.25" />
@@ -79,6 +87,7 @@
         <entry key="..\:/Bida/app/src/main/res/layout/guima_otp.xml" value="0.22" />
         <entry key="..\:/Bida/app/src/main/res/layout/guima_otp_dangky.xml" value="0.25" />
         <entry key="..\:/Bida/app/src/main/res/layout/hoanthanh_booking_online_kh.xml" value="0.22" />
+        <entry key="..\:/Bida/app/src/main/res/layout/khonggian_chatbot.xml" value="1.0" />
         <entry key="..\:/Bida/app/src/main/res/layout/layout_header_nav.xml" value="0.33" />
         <entry key="..\:/Bida/app/src/main/res/layout/layout_header_nav_ct.xml" value="0.25" />
         <entry key="..\:/Bida/app/src/main/res/layout/layout_header_nav_kh.xml" value="0.25" />

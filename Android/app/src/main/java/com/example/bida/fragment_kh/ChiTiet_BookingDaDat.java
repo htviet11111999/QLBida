@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.bida.Api.ApiService;
 import com.example.bida.Menu_KH;
 import com.example.bida.Menu_NV;
+import com.example.bida.Model.BanBida;
 import com.example.bida.Model.Booking;
 import com.example.bida.Model.LichSuKH;
 import com.example.bida.Model.LichSuNV;
@@ -31,8 +32,10 @@ import com.google.gson.JsonObject;
 
 import java.io.ByteArrayInputStream;
 import java.text.DateFormat;
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -69,7 +72,14 @@ public class ChiTiet_BookingDaDat extends AppCompatActivity {
         img_avatar.setImageBitmap(theImage);
         tv_kh.setText(String.format("Khách hàng : %s", booking.getTenkhachhang()));
         tv_ngaylap.setText(String.format("Ngày lập : %s", booking.getNgay()));
-        tv_tienthanhtoan.setText(String.format("Tiền thanh toán : %s", booking.getTienthanhtoan()));
+        double vnd = Math.round(booking.getTienthanhtoan() * 10) / 10 ;
+
+        // tạo 1 NumberFormat để định dạng tiền tệ theo tiêu chuẩn của Việt Nam
+        // đơn vị tiền tệ của Việt Nam là đồng
+        Locale localeVN = new Locale("vi", "VN");
+        NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
+        String str1 = currencyVN.format(vnd);
+        tv_tienthanhtoan.setText(String.format("Tiền dịch vụ : %s",str1 ));
         tv_ngaychoi.setText(String.format("Ngày chơi : %s", booking.getNgaychoi()));
         tv_giochoi.setText(String.format("Giờ bắt đầu chơi : %s", booking.getGiochoi()));
 
@@ -86,6 +96,31 @@ public class ChiTiet_BookingDaDat extends AppCompatActivity {
                                 Booking boo = CacBookingDaDat.b;
                                 boo.setGiochoithat("");
                                 boo.setTrangthai(4);
+                                ApiService.apiService.lay1BanBidatheoID(boo.getIdban())
+                                        .enqueue(new Callback<BanBida>() {
+                                            @Override
+                                            public void onResponse(Call<BanBida> call, Response<BanBida> response) {
+                                                BanBida ban = response.body();
+                                                ban.setSoluong(ban.getSoluong()+1);
+                                                ApiService.apiService.capnhatBantheoID(ban.getId(),ban)
+                                                        .enqueue(new Callback<JsonObject>() {
+                                                            @Override
+                                                            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+
+                                                            }
+
+                                                            @Override
+                                                            public void onFailure(Call<JsonObject> call, Throwable t) {
+
+                                                            }
+                                                        });
+                                            }
+
+                                            @Override
+                                            public void onFailure(Call<BanBida> call, Throwable t) {
+
+                                            }
+                                        });
                                 ApiService.apiService.suaBookingXacthuc(boo.getId(), boo)
                                         .enqueue(new Callback<JsonObject>() {
                                             @Override

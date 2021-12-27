@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,7 @@ public class CapNhatThongTinDiaDiem extends AppCompatActivity {
     int id ;
     EditText edt_ten, edt_kinhdo, edt_vido, edt_diachi, edt_ghichu;
     TextView tv_tenchutiem , tv_trangthai;
+    RadioButton rd_khongco, rd_trongnha, rd_cobai;
     Button btn_Hoanthanh, btn_Thoat;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,6 +55,9 @@ public class CapNhatThongTinDiaDiem extends AppCompatActivity {
         edt_vido = (EditText) findViewById(R.id.update_vido_ct);
         edt_diachi = (EditText) findViewById(R.id.update_diachi_qldd_ct);
         edt_ghichu = (EditText) findViewById(R.id.update_ghichu_ct);
+        rd_khongco = (RadioButton) findViewById(R.id.radio_khongco_ct);
+        rd_trongnha = (RadioButton) findViewById(R.id.radio_trongnha_ct);
+        rd_cobai = (RadioButton) findViewById(R.id.radio_cobai_ct);
         btn_Hoanthanh = (Button) findViewById(R.id.updateHoanthanh_qldd_ct);
         btn_Thoat = (Button) findViewById(R.id.updateThoat_qldd_ct);
 
@@ -80,6 +85,9 @@ public class CapNhatThongTinDiaDiem extends AppCompatActivity {
                         else s = "Hết bàn";
                         tv_trangthai.setText(s);
                         edt_ghichu.setText(d.getGhichu());
+                        if (d.getBaigiuxe() == 1 ) rd_khongco.setChecked(true);
+                        else if (d.getBaigiuxe() == 2) rd_trongnha.setChecked(true);
+                        else rd_cobai.setChecked(true);
                     }
 
                     @Override
@@ -158,6 +166,9 @@ public class CapNhatThongTinDiaDiem extends AppCompatActivity {
         diaDiem.setHotenchu(tv_tenchutiem.getText().toString());
         diaDiem.setGhichu(edt_ghichu.getText().toString());
         diaDiem.setIdchu(d.getIdchu());
+        if(rd_khongco.isChecked()) diaDiem.setBaigiuxe(1);
+        else if(rd_trongnha.isChecked()) diaDiem.setBaigiuxe(2);
+        else diaDiem.setBaigiuxe(3);
         return diaDiem;
     }
 }

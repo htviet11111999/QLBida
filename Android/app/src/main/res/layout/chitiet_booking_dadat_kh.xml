@@ -59,7 +59,7 @@
             android:id="@+id/tienthanhtoan_booking_dadat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tiền thanh toán"
+            android:text="Tiền dịch vụ"
             android:fontFamily="serif"
             android:padding="5dp"
             android:textColor="@color/black"

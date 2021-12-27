@@ -25,6 +25,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.bida.Api.ApiService;
 import com.example.bida.MainActivity;
+import com.example.bida.Menu_KH;
 import com.example.bida.Menu_QTV;
 import com.example.bida.Model.LichSuQTV;
 import com.example.bida.Model.TaiKhoan;
@@ -118,32 +119,45 @@ public class ChiTietQuanLyTaiKhoan extends AppCompatActivity {
                         "Đồng ý",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int i) {
-
-                                ApiService.apiService.xoaTaiKhoan(id)
+                                ApiService.apiService.xoaLichSu_KH(id)
                                         .enqueue(new Callback<JsonObject>() {
                                             @Override
                                             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                                                Log.e("KQ",""+response.body());
-                                                Toast.makeText(ChiTietQuanLyTaiKhoan.this, "Xóa tài khoản thành công !", Toast.LENGTH_SHORT).show();
-                                                String noidung = "Bạn đã xóa tài khoản "+ tv_hoten.getText().toString();
-                                                DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
-                                                String thoigian = df.format(Calendar.getInstance().getTime());
-                                                LichSuQTV ls = new LichSuQTV();
-                                                ls.setNoidung(noidung);
-                                                ls.setThoigian(thoigian);
-                                                LichSuQTV.ThemLichSu(ls);
-                                                dialog.cancel();
-                                                Intent intent = new Intent(ChiTietQuanLyTaiKhoan.this, Menu_QTV.class);
-                                                intent.putExtra("number",Menu_QTV.sdt);
-                                                startActivity(intent);
+                                                ApiService.apiService.xoaTaiKhoan(id)
+                                                        .enqueue(new Callback<JsonObject>() {
+                                                            @Override
+                                                            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                                                                Log.e("KQ",""+response.body());
+                                                                Toast.makeText(ChiTietQuanLyTaiKhoan.this, "Xóa tài khoản thành công !", Toast.LENGTH_SHORT).show();
+                                                                String noidung = "Bạn đã xóa tài khoản "+ tv_hoten.getText().toString();
+                                                                DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+                                                                String thoigian = df.format(Calendar.getInstance().getTime());
+                                                                LichSuQTV ls = new LichSuQTV();
+                                                                ls.setNoidung(noidung);
+                                                                ls.setThoigian(thoigian);
+                                                                LichSuQTV.ThemLichSu(ls);
+                                                                dialog.cancel();
+                                                                Intent intent = new Intent(ChiTietQuanLyTaiKhoan.this, Menu_QTV.class);
+                                                                intent.putExtra("number",Menu_QTV.sdt);
+                                                                startActivity(intent);
 
+                                                            }
+
+                                                            @Override
+                                                            public void onFailure(Call<JsonObject> call, Throwable t) {
+                                                                Toast.makeText(ChiTietQuanLyTaiKhoan.this, "Xóa tài khoản thất bại !", Toast.LENGTH_SHORT).show();
+                                                            }
+                                                        });
                                             }
 
                                             @Override
                                             public void onFailure(Call<JsonObject> call, Throwable t) {
-                                                Toast.makeText(ChiTietQuanLyTaiKhoan.this, "Xóa tài khoản thất bại !", Toast.LENGTH_SHORT).show();
+
                                             }
                                         });
+
+
+
 
                             }
                         });

@@ -1,6 +1,10 @@
 package com.example.bida.Api;
 
 
+import com.example.bida.KNN.BGiuXe;
+import com.example.bida.KNN.DVAnUong;
+import com.example.bida.KNN.RongRai;
+import com.example.bida.KNN.SLNguoi;
 import com.example.bida.Model.BanBida;
 import com.example.bida.Model.Booking;
 import com.example.bida.Model.CTBooking;
@@ -42,6 +46,46 @@ public interface ApiService {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(ApiService.class);
+
+    //KNN_KhongGian
+    @GET("khonggian")
+    Call<ArrayList<RongRai>> layDSRongRai();
+    @POST("khonggian")
+    Call<JsonObject> themRongRai (
+            @Body RongRai r
+    );
+    @DELETE("khonggian")
+    Call<JsonObject> xoaRongRai ();
+    //KNN_DichVuAnUong
+    @GET("dichvu")
+    Call<ArrayList<DVAnUong>> layDSDichVu();
+    @POST("dichvu")
+    Call<JsonObject> themDichVu (
+            @Body DVAnUong r
+    );
+    @DELETE("dichvu")
+    Call<JsonObject> xoaDichVu ();
+
+    //KNN_SoLuongNguoi
+    @GET("slnguoi")
+    Call<ArrayList<SLNguoi>> layDSSLNguoi();
+    @POST("slnguoi")
+    Call<JsonObject> themSLNguoi (
+            @Body SLNguoi r
+    );
+    @DELETE("slnguoi")
+    Call<JsonObject> xoaSLNguoi ();
+
+    //KNN_BaiGiuXe
+    @GET("baigiuxe")
+    Call<ArrayList<BGiuXe>> layDSBaiGiuXe();
+    @POST("baigiuxe")
+    Call<JsonObject> themBaiGiuXe (
+            @Body BGiuXe r
+    );
+    @DELETE("baigiuxe")
+    Call<JsonObject> xoaBaiGiuXe ();
+
 
     //Lịch sử quản trị viên
     @GET("lichsu_qtv")
@@ -118,6 +162,14 @@ public interface ApiService {
             @Path("id") int id
     );
     //Bàn Bida
+    @GET("ban/{id}")
+    Call<BanBida> lay1BanBidatheoID(@Path("id") int id);
+    @PUT("ban/{id}")
+    Call<JsonObject> capnhatBantheoID (
+            @Path("id") int id,
+            @Body BanBida banBida
+    );
+
     @GET("banbida/{iddiadiem}")
     Call<ArrayList<BanBida>> layDSBanBida(@Path("iddiadiem") int id);
     @POST("banbida")

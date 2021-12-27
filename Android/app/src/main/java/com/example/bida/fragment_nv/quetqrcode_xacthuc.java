@@ -117,8 +117,8 @@ public class quetqrcode_xacthuc extends AppCompatActivity {
                             @Override
                             public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                                 Toast.makeText(quetqrcode_xacthuc.this, "Xác thực booking thành công !", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(quetqrcode_xacthuc.this, chitiet_Booking_nv.class);
-                                intent.putExtra("id",id);
+                                Intent intent = new Intent(quetqrcode_xacthuc.this, Menu_NV.class);
+                                intent.putExtra("number", Menu_NV.sdt);
                                 startActivity(intent);
                             }
 
@@ -142,7 +142,7 @@ public class quetqrcode_xacthuc extends AppCompatActivity {
                 id = Integer.parseInt(result.getContents());
                 int mabooking = Integer.parseInt(result.getContents());
                 for (int i = 0 ; i < b.size(); i++){
-                    if (b.get(i).getId() == mabooking){
+                    if (b.get(i).getId() == mabooking && b.get(i).getIddiadiem() == Menu_NV.idd){
                         booking = b.get(i);
                         String strArrtmp[]=booking.getNgaychoi().split("/");
                         int ngay=Integer.parseInt(strArrtmp[0]);
@@ -200,15 +200,16 @@ public class quetqrcode_xacthuc extends AppCompatActivity {
                         }
                         else if (booking.getTrangthai() == 3) {
                             tt = "Đang chơi...";
-                            tv_trangthai.setTextColor(Color.parseColor("#10DF19"));
+                            tv_trangthai.setTextColor(Color.parseColor("#0FC6DF"));
                         }
                         else {
                             tt = "Đã thanh toán";
-                            tv_trangthai.setTextColor(Color.parseColor("#FFBB86FC"));
+                            tv_trangthai.setTextColor(Color.parseColor("#04FF00"));
                         }
                         tv_trangthai.setText(String.format("Trạng thái : %s", tt));
                         break;
                     }
+                    else  tv_trangthai.setText("Khách hàng hiện tại không đăng ký chơi ở tiệm này !");
                 }
             }
         }else {

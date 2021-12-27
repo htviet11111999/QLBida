@@ -203,6 +203,39 @@
                 android:textColor="@color/black"
                 android:textSize="17sp" />
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bãi giữ xe : "
+                android:fontFamily="serif"
+                android:padding="5dp"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                />
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <RadioButton
+                    android:id="@+id/radio_khongco_ct"
+                    android:text="Không có"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RadioButton
+                    android:id="@+id/radio_trongnha_ct"
+                    android:text="Trong nhà"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <RadioButton
+                    android:id="@+id/radio_cobai_ct"
+                    android:text="Có bãi giữ xe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RadioGroup>
+        </LinearLayout>
 
     </LinearLayout>
 

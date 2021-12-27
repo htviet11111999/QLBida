@@ -81,6 +81,7 @@ public class DatBan_KH extends AppCompatActivity {
     }
 
     public void setEvent() {
+        Log.e("MA DD",""+ChiTietDiaDiem_KH.id);
         ApiService.apiService.layDSBanBida(ChiTietDiaDiem_KH.id)
                 .enqueue(new Callback<ArrayList<BanBida>>() {
                     @Override
@@ -141,7 +142,7 @@ public class DatBan_KH extends AppCompatActivity {
                     txtDate.setError("");
                     Toast.makeText(DatBan_KH.this, "Không được chọn ngày trong quá khứ !", Toast.LENGTH_SHORT).show();
                 }
-                else if ((ngaydat <= ngay && thangdat == thang && namdat == nam) && (giodat == gio && phutdat < phut || giodat < gio)){
+                else if ((ngaydat == ngay && thangdat == thang && namdat == nam) && (giodat == gio && phutdat < phut || giodat < gio)){
                     txtTime.requestFocus();
                     txtTime.setError("");
                     Toast.makeText(DatBan_KH.this, "Không được chọn giờ trong quá khứ !", Toast.LENGTH_SHORT).show();
@@ -168,6 +169,8 @@ public class DatBan_KH extends AppCompatActivity {
                                         giochoi = Integer.parseInt(strArr1[0]) + 12;
                                     }
                                     else giochoi = Integer.parseInt(strArr1[0]);
+                                    Log.e("Ngay thang man hinh",""+ngaychoi+"/"+thangchoi+"/"+namchoi);
+                                    Log.e("Gio dat tren man hinh",""+giochoi+":"+phutchoi);
                                     for(int i =0; i< bookingtoan.size(); i++){
                                         String strArrtmp[]=bookingtoan.get(i).getNgaychoi().split("/");
                                         int ngay=Integer.parseInt(strArrtmp[0]);
@@ -185,12 +188,16 @@ public class DatBan_KH extends AppCompatActivity {
                                             gio = Integer.parseInt(strArr[0]) + 12;
                                         }
                                         else gio = Integer.parseInt(strArr[0]);
-                                        if( bookingtoan.get(i).getSdt().equals(Menu_KH.sdt) && bookingtoan.get(i).getTrangthai()==2 && ngaychoi==ngay && thangchoi == thang && namchoi == nam && Math.abs(gio*60+phut - giochoi*60+phutchoi) <=30){
+
+                                        if( bookingtoan.get(i).getSdt().equals(Menu_KH.sdt) && bookingtoan.get(i).getTrangthai()==2 && ngaychoi==ngay && thangchoi == thang && namchoi == nam  && Math.abs(gio*60+phut - giochoi*60-phutchoi) <=30){
+                                            Log.e("Ngay thang dat",""+ngay+"/"+thang+"/"+nam);
+                                            Log.e("Gio dat",""+gio+":"+phut);
                                             Toast.makeText(DatBan_KH.this, "Bạn đã đặt lịch chơi trong thời điểm này rồi, vui lòng chơi theo lịch đã đặt trước hoặc hủy lịch đã đặt để đặt booking mới !", Toast.LENGTH_SHORT).show();
                                             kt =0;
                                             break;
                                         }
                                         else{
+                                            Log.e("Khong co","");
                                             kt = 1;
                                         }
                                     }

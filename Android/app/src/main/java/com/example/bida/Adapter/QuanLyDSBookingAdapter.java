@@ -25,7 +25,9 @@ import com.example.bida.Model.TaiKhoan;
 import com.example.bida.R;
 
 import java.io.ByteArrayInputStream;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class QuanLyDSBookingAdapter extends ArrayAdapter<Booking> {
     Context context;
@@ -52,7 +54,14 @@ public class QuanLyDSBookingAdapter extends ArrayAdapter<Booking> {
         ((TextView) convertView.findViewById(R.id.ngay_dsbooking)).setText(String.format("Ngày: %s", p.getNgay()));
         ((TextView) convertView.findViewById(R.id.gio_dsbooking)).setText(String.format("Giờ: %s", p.getGio()));
         ((TextView) convertView.findViewById(R.id.hotennhanvien_dsbooking)).setText(String.format("Nhân viên lập: %s", p.getTennhanvien()));
-        ((TextView) convertView.findViewById(R.id.tienthanhtoan_dsbooking)).setText(String.format("Tiền thanh toán: %s", p.getTienthanhtoan()));
+        double vnd = Math.round(p.getTienthanhtoan() * 10) / 10 ;
+
+        // tạo 1 NumberFormat để định dạng tiền tệ theo tiêu chuẩn của Việt Nam
+        // đơn vị tiền tệ của Việt Nam là đồng
+        Locale localeVN = new Locale("vi", "VN");
+        NumberFormat currencyVN = NumberFormat.getCurrencyInstance(localeVN);
+        String str1 = currencyVN.format(vnd);
+        ((TextView) convertView.findViewById(R.id.tienthanhtoan_dsbooking)).setText(String.format("Tiền dịch vụ: %s", str1));
         String tt ;
         if (p.getTrangthai() == 0 ) {
             tt = "Chưa thanh toán";
@@ -64,15 +73,15 @@ public class QuanLyDSBookingAdapter extends ArrayAdapter<Booking> {
         }
         else if (p.getTrangthai() == 3) {
             tt = "Đang chơi...";
-            ((TextView) convertView.findViewById(R.id.trangthai_dsbooking)).setTextColor(Color.parseColor("#10DF19"));
+            ((TextView) convertView.findViewById(R.id.trangthai_dsbooking)).setTextColor(Color.parseColor("#0FC6DF"));
         }
         else if (p.getTrangthai() == 4) {
             tt = "Đã hủy";
-            ((TextView) convertView.findViewById(R.id.trangthai_dsbooking)).setTextColor(Color.parseColor("#FF0000"));
+            ((TextView) convertView.findViewById(R.id.trangthai_dsbooking)).setTextColor(Color.parseColor("#FF6F00"));
         }
         else {
             tt = "Đã thanh toán";
-            ((TextView) convertView.findViewById(R.id.trangthai_dsbooking)).setTextColor(Color.parseColor("#FFBB86FC"));
+            ((TextView) convertView.findViewById(R.id.trangthai_dsbooking)).setTextColor(Color.parseColor("#04FF00"));
         }
         ((TextView) convertView.findViewById(R.id.trangthai_dsbooking)).setText(String.format("Trạng thái: %s",tt));
         return convertView;

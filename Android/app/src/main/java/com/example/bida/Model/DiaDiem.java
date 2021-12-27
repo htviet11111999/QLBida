@@ -10,6 +10,15 @@ public class DiaDiem {
     private String ghichu;
     private int idchu;
     private String hotenchu;
+    private int baigiuxe;
+
+    public int getBaigiuxe() {
+        return baigiuxe;
+    }
+
+    public void setBaigiuxe(int baigiuxe) {
+        this.baigiuxe = baigiuxe;
+    }
 
     public int getId() {
         return id;
@@ -83,7 +92,7 @@ public class DiaDiem {
         this.hotenchu = hotenchu;
     }
 
-    public DiaDiem(int id, String ten, String diachi, double kinhdo, double vido, int trangthai, String ghichu, int idchu, String hotenchu) {
+    public DiaDiem(int id, String ten, String diachi, double kinhdo, double vido, int trangthai, String ghichu, int idchu, String hotenchu, int baigiuxe) {
         this.id = id;
         this.ten = ten;
         this.diachi = diachi;
@@ -93,6 +102,7 @@ public class DiaDiem {
         this.ghichu = ghichu;
         this.idchu = idchu;
         this.hotenchu = hotenchu;
+        this.baigiuxe = baigiuxe;
     }
     public DiaDiem() {
         this.id = id;
@@ -104,6 +114,7 @@ public class DiaDiem {
         this.ghichu = ghichu;
         this.idchu = idchu;
         this.hotenchu = hotenchu;
+        this.baigiuxe = baigiuxe;
     }
 
 

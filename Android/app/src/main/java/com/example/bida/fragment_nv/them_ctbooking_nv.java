@@ -131,6 +131,7 @@ public class them_ctbooking_nv extends AppCompatActivity {
                                 @Override
                                 public void onResponse(Call<ArrayList<Booking>> call, Response<ArrayList<Booking>> response) {
                                     data = response.body();
+                                    Log.e("Detail",""+data.size());
                                     for (int i = 0 ; i<data.size(); i++){
                                         if ((data.get(i).getTenkhachhang().equals(datbooking_nv.b.getTenkhachhang())) && (data.get(i).getTrangthai()==0)){
                                             IDBOOKING = data.get(i).getId();

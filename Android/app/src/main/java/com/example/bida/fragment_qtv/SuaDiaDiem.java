@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,18 +16,13 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.bida.Api.ApiService;
 import com.example.bida.Menu_QTV;
-import com.example.bida.Model.ChuTiemSpinner;
 import com.example.bida.Model.DiaDiem;
 import com.example.bida.Model.LichSuQTV;
-import com.example.bida.Model.TaiKhoan;
 import com.example.bida.R;
 import com.google.gson.JsonObject;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 import retrofit2.Call;
@@ -37,6 +33,7 @@ public class SuaDiaDiem extends AppCompatActivity {
     DiaDiem d;
     int id ;
     EditText edt_ten, edt_kinhdo, edt_vido, edt_diachi, edt_ghichu;
+    RadioButton rd_khongco, rd_trongnha, rd_cobai;
     TextView tv_tenchutiem , tv_trangthai;
     Button btn_Hoanthanh, btn_Thoat;
     @Override
@@ -54,6 +51,9 @@ public class SuaDiaDiem extends AppCompatActivity {
         edt_vido = (EditText) findViewById(R.id.update_vido);
         edt_diachi = (EditText) findViewById(R.id.update_diachi_qldd);
         edt_ghichu = (EditText) findViewById(R.id.update_ghichu);
+        rd_khongco = (RadioButton) findViewById(R.id.radio_khongco);
+        rd_trongnha = (RadioButton) findViewById(R.id.radio_trongnha);
+        rd_cobai = (RadioButton) findViewById(R.id.radio_cobai);
         btn_Hoanthanh = (Button) findViewById(R.id.updateHoanthanh_qldd);
         btn_Thoat = (Button) findViewById(R.id.updateThoat_qldd);
 
@@ -81,6 +81,9 @@ public class SuaDiaDiem extends AppCompatActivity {
                         else s = "Hết bàn";
                         tv_trangthai.setText(s);
                         edt_ghichu.setText(d.getGhichu());
+                        if (d.getBaigiuxe() == 1 ) rd_khongco.setChecked(true);
+                        else if (d.getBaigiuxe() == 2) rd_trongnha.setChecked(true);
+                        else rd_cobai.setChecked(true);
                     }
 
                     @Override
@@ -134,7 +137,6 @@ public class SuaDiaDiem extends AppCompatActivity {
                                         intent.putExtra("number",Menu_QTV.sdt);
                                         startActivity(intent);
                                     }
-
                                     @Override
                                     public void onFailure(Call<JsonObject> call, Throwable t) {
                                         Toast.makeText(SuaDiaDiem.this, "Gọi API thất bại !", Toast.LENGTH_SHORT).show();
@@ -158,6 +160,9 @@ public class SuaDiaDiem extends AppCompatActivity {
         diaDiem.setHotenchu(tv_tenchutiem.getText().toString());
         diaDiem.setGhichu(edt_ghichu.getText().toString());
         diaDiem.setIdchu(d.getIdchu());
+        if(rd_khongco.isChecked()) diaDiem.setBaigiuxe(1);
+        else if(rd_trongnha.isChecked()) diaDiem.setBaigiuxe(2);
+        else diaDiem.setBaigiuxe(3);
         return diaDiem;
     }
 }

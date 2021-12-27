@@ -49,6 +49,7 @@ import retrofit2.Response;
 
 public class QuanLyDSBooking extends ListFragment {
     ArrayList<Booking> b = new ArrayList<>();
+    ArrayList<Booking> bo = new ArrayList<>();
     ArrayList<NhanVien> nv = new ArrayList<>();
     public static int madiadiem;
     public static int idnhanvientiem;
@@ -59,6 +60,95 @@ public class QuanLyDSBooking extends ListFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_booking_nv,container, false);
         Button btn_them = (Button) view.findViewById(R.id.ThemBooking);
+
+        ApiService.apiService.layDSBookingToan()
+                .enqueue(new Callback<ArrayList<Booking>>() {
+                    @Override
+                    public void onResponse(Call<ArrayList<Booking>> call, Response<ArrayList<Booking>> response) {
+                        bo = response.body();
+                        Calendar calendar = Calendar.getInstance();
+                        int ngayhientai = calendar.get(Calendar.DATE);
+                        int thanghientai  = calendar.get(Calendar.MONTH) + 1;
+                        int namhientai  = calendar.get(Calendar.YEAR);
+                        int giohientai = 0;
+                        int phuthientai = calendar.get(Calendar.MINUTE);
+                        int td = calendar.get(Calendar.AM_PM);
+                        if(td == 1){
+                            giohientai = calendar.get(Calendar.HOUR) + 12;
+                        }
+                        else giohientai =calendar.get(Calendar.HOUR);
+                        for (int i = 0; i< bo.size(); i++){
+                            String strArrtmp[]=bo.get(i).getNgaychoi().split("/");
+                            int ngay=Integer.parseInt(strArrtmp[0]);
+                            int thang=Integer.parseInt(strArrtmp[1]);
+                            int nam=Integer.parseInt(strArrtmp[2]);
+
+                            String s = bo.get(i).getGiochoi()+"";
+                            String strArr[]=s.split(":");
+                            String sau=(strArr[1]);
+                            String ss[]= sau.split(" ");
+                            int phut = Integer.parseInt(ss[0]);
+                            String tdd = ss[1];
+                            Log.e("TDD",""+tdd);
+                            int gio = 0;
+                            if(tdd.equals("PM")==true ){
+                                gio = Integer.parseInt(strArr[0]) + 12;
+                            }
+                            else gio = Integer.parseInt(strArr[0]);
+                            if( (ngay < ngayhientai && thang <= thanghientai && nam <= namhientai  && bo.get(i).getTrangthai() != 4)){
+                                Booking book = bo.get(i);
+                                ApiService.apiService.lay1BanBida(book.getIddiadiem(),book.getIdban())
+                                        .enqueue(new Callback<BanBida>() {
+                                            @Override
+                                            public void onResponse(Call<BanBida> call, Response<BanBida> response) {
+                                                BanBida ban = response.body();
+                                                ban.setSoluong(ban.getSoluong()+ 1);
+                                                ApiService.apiService.capnhatBan(book.getIddiadiem(),book.getIdban(), ban)
+                                                        .enqueue(new Callback<JsonObject>() {
+                                                            @Override
+                                                            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+
+                                                            }
+
+                                                            @Override
+                                                            public void onFailure(Call<JsonObject> call, Throwable t) {
+
+                                                            }
+                                                        });
+                                            }
+
+                                            @Override
+                                            public void onFailure(Call<BanBida> call, Throwable t) {
+
+                                            }
+                                        });
+
+                                book.setTrangthai(4);
+                                ApiService.apiService.suaBookingXacthuc(book.getId(),book)
+                                        .enqueue(new Callback<JsonObject>() {
+                                            @Override
+                                            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+
+                                            }
+
+                                            @Override
+                                            public void onFailure(Call<JsonObject> call, Throwable t) {
+
+                                            }
+                                        });
+                                break;
+                            }
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ArrayList<Booking>> call, Throwable t) {
+
+                    }
+                });
+        ///
+
         ApiService.apiService.layDSNVToan()
                 .enqueue(new Callback<ArrayList<NhanVien>>() {
                     @Override

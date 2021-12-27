@@ -61,9 +61,11 @@ public class ChiTietVatPham extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<ArrayList<CTBooking>> call, Response<ArrayList<CTBooking>> response) {
                         data= response.body();
-                        for(int i = 0 ;i<data.size();i++){
-                            if(data.get(i).getIdvatpham() == id){
-                                btn_xoa.setVisibility(View.GONE);
+                        if(response.message().equals("Not Found")== false) {
+                            for (int i = 0; i < data.size(); i++) {
+                                if (data.get(i).getIdvatpham() == id) {
+                                    btn_xoa.setVisibility(View.GONE);
+                                }
                             }
                         }
                     }

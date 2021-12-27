@@ -21,5 +21,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="map_api_key">AIzaSyDZ6rohJedEHEPlqZrd5e2jL8PADI37t-Q</string>
+    <string name="api_key">paste your api key here</string>
 
 </resources>

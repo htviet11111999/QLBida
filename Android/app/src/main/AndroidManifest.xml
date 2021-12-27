@@ -8,10 +8,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/bida"
         android:usesCleartextTraffic="true"
         android:label=""
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/bida"
         android:supportsRtl="true"
         android:theme="@style/Theme.Bida">
         <meta-data
@@ -27,8 +27,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ChatBot.MainChatBot"></activity>
+        <activity android:name=".ChatBot.BaiGiuXe"></activity>
+        <activity android:name=".ChatBot.SLNguoiChoi"></activity>
+        <activity android:name=".ChatBot.KhongGian"></activity>
+        <activity android:name=".ChatBot.DichVu"></activity>
         <activity android:name=".MainActivity"></activity>
-        <activity android:name=".ChatBot.ChatMain"></activity>
         <activity android:name=".QuenMatKhau.NhapThongTin_QuenMKActivity"></activity>
         <activity android:name=".QuenMatKhau.GuiMaOTP_Activity"></activity>
         <activity android:name=".QuenMatKhau.ThayDoiMK_Activity"></activity>
@@ -70,6 +74,7 @@
         <activity android:name=".fragment_nv.chitiet_Booking_nv"></activity>
         <activity android:name=".fragment_nv.chitiet_datvatpham_nv"></activity>
         <activity android:name=".fragment_nv.quetqrcode_xacthuc"></activity>
+        <activity android:name=".fragment_nv.them_ctbooking"></activity>
         <activity android:name=".Menu_KH"></activity>
         <activity android:name=".fragment_kh.ChiTietDiaDiem_KH"></activity>
         <activity android:name=".fragment_kh.SuaTTTK_KH"></activity>

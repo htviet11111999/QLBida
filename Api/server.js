@@ -10,6 +10,103 @@ let app = express();
     app.use(bodyParser.json({limit: "50mb"}));
     app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}));
 
+
+    //===KNN_Không gian===
+    app.route('/khonggian')
+    .get((req,res)=>{
+    con.query("SELECT * FROM knn_khonggian", function (err, result, fields) {
+        if (err) throw err;
+        var lichsu = result; 
+        res.json(lichsu);
+        });
+    })
+    .post((req, res) => {
+        var {tentiem, soluong, khoangcach} = req.body;
+        con.query(`INSERT INTO knn_khonggian (tentiem, soluong, khoangcach) 
+        VALUES (${con.escape(tentiem)},${con.escape(soluong)}, ${con.escape(khoangcach)})`, function (err, result) {
+            if (err) throw err;
+            res.json({status: 200})
+        });
+    })
+    .delete((req, res) => {
+            con.query("DELETE FROM knn_khonggian ", function (err, result) {
+                if (err) throw err;
+                res.json({status: 200})
+            });
+         })
+    //===KNN_Dịch vụ===
+    app.route('/dichvu')
+    .get((req,res)=>{
+    con.query("SELECT * FROM knn_dvanuong", function (err, result, fields) {
+        if (err) throw err;
+        var lichsu = result; 
+        res.json(lichsu);
+        });
+    })
+    .post((req, res) => {
+        var {tentiem, soluong, khoangcach} = req.body;
+        con.query(`INSERT INTO knn_dvanuong (tentiem, soluong, khoangcach) 
+        VALUES (${con.escape(tentiem)},${con.escape(soluong)}, ${con.escape(khoangcach)})`, function (err, result) {
+            if (err) throw err;
+            res.json({status: 200})
+        });
+    })
+    .delete((req, res) => {
+            con.query("DELETE FROM knn_dvanuong ", function (err, result) {
+                if (err) throw err;
+                res.json({status: 200})
+            });
+         })
+
+    //===KNN_Số lượng người===
+    app.route('/slnguoi')
+    .get((req,res)=>{
+    con.query("SELECT * FROM knn_soluongnguoi", function (err, result, fields) {
+        if (err) throw err;
+        var lichsu = result; 
+        res.json(lichsu);
+        });
+    })
+    .post((req, res) => {
+        var {tentiem, soluong, khoangcach} = req.body;
+        con.query(`INSERT INTO knn_soluongnguoi (tentiem, soluong, khoangcach) 
+        VALUES (${con.escape(tentiem)},${con.escape(soluong)}, ${con.escape(khoangcach)})`, function (err, result) {
+            if (err) throw err;
+            res.json({status: 200})
+        });
+    })
+    .delete((req, res) => {
+            con.query("DELETE FROM knn_soluongnguoi ", function (err, result) {
+                if (err) throw err;
+                res.json({status: 200})
+            });
+         })
+
+    //===KNN_Bãi giữ xe===
+    app.route('/baigiuxe')
+    .get((req,res)=>{
+    con.query("SELECT * FROM knn_baigiuxe", function (err, result, fields) {
+        if (err) throw err;
+        var lichsu = result; 
+        res.json(lichsu);
+        });
+    })
+    .post((req, res) => {
+        var {tentiem, soluong, khoangcach} = req.body;
+        con.query(`INSERT INTO knn_baigiuxe (tentiem, soluong, khoangcach) 
+        VALUES (${con.escape(tentiem)},${con.escape(soluong)}, ${con.escape(khoangcach)})`, function (err, result) {
+            if (err) throw err;
+            res.json({status: 200})
+        });
+    })
+    .delete((req, res) => {
+            con.query("DELETE FROM knn_baigiuxe ", function (err, result) {
+                if (err) throw err;
+                res.json({status: 200})
+            });
+         })
+
+
     //===Lịch sử quản trị viên===
     app.route('/lichsu_qtv')
     .get((req,res)=>{
@@ -167,9 +264,9 @@ let app = express();
         res.json(diadiem);
         });
     }).post((req, res) => {
-        var {ten, diachi, kinhdo, vido,trangthai, idchu, hotenchu, ghichu} = req.body;
-        con.query(`INSERT INTO diadiem (ten, diachi, kinhdo, vido,trangthai, idchu, hotenchu, ghichu) 
-        VALUES (${con.escape(ten)}, ${con.escape(diachi)}, ${con.escape(kinhdo)}, ${con.escape(vido)},${con.escape(trangthai)}, ${con.escape(idchu)}, ${con.escape(hotenchu)},${con.escape(ghichu)})`, function (err, result) {
+        var {ten, diachi, kinhdo, vido,trangthai, idchu, hotenchu, ghichu, baigiuxe} = req.body;
+        con.query(`INSERT INTO diadiem (ten, diachi, kinhdo, vido,trangthai, idchu, hotenchu, ghichu, baigiuxe) 
+        VALUES (${con.escape(ten)}, ${con.escape(diachi)}, ${con.escape(kinhdo)}, ${con.escape(vido)},${con.escape(trangthai)}, ${con.escape(idchu)}, ${con.escape(hotenchu)},${con.escape(ghichu)},${con.escape(baigiuxe)})`, function (err, result) {
             if (err) throw err;
             console.log("1 dia diem duoc them");
             res.json({status: 200})
@@ -187,8 +284,8 @@ let app = express();
     })
     .put((req,res)=>{
         let id = req.params.id;
-        var {ten, diachi, kinhdo, vido, trangthai, ghichu} = req.body;
-        con.query(`UPDATE diadiem SET ten = ${con.escape(ten)} , diachi = ${con.escape(diachi)} , kinhdo = ${con.escape(kinhdo)} , vido = ${con.escape(vido)} , trangthai = ${con.escape(trangthai)} , ghichu = ${con.escape(ghichu)} WHERE id = ${con.escape(id)}`, function (err, result, fields) {
+        var {ten, diachi, kinhdo, vido, trangthai, ghichu, baigiuxe} = req.body;
+        con.query(`UPDATE diadiem SET ten = ${con.escape(ten)} , diachi = ${con.escape(diachi)} , kinhdo = ${con.escape(kinhdo)} , vido = ${con.escape(vido)} , trangthai = ${con.escape(trangthai)} , ghichu = ${con.escape(ghichu)}, baigiuxe = ${con.escape(baigiuxe)} WHERE id = ${con.escape(id)}`, function (err, result, fields) {
             if (err) throw err;
             res.json({status: 200})
         });
@@ -306,6 +403,25 @@ let app = express();
      //===Bàn bida===
 
     //banbida (GET(Lấy danh sách bàn theo id của địa điểm)-POST)
+
+    app.route('/ban/:id')
+    .get((req,res)=>{
+    let id = req.params.id;
+    con.query(`SELECT * FROM banbida WHERE id = ${con.escape(id)}`, function (err, result, fields) {
+        if (err) throw err;
+        var [banbida] = result; 
+        res.json(banbida);
+        });
+    })
+    .put((req,res)=>{
+        let id = req.params.id;
+        var {tenban, gia,soluong, hinhanh} = req.body;
+        con.query(`UPDATE banbida SET tenban = ${con.escape(tenban)} , gia = ${con.escape(gia)} ,soluong=${con.escape(soluong)}, hinhanh = ${con.escape(hinhanh)}  WHERE id = ${con.escape(id)}`, function (err, result, fields) {
+            if (err) throw err;
+            res.json({status: 200})
+        });
+    })
+
     app.route('/banbida')
     .post((req, res) => {
         var {tenban, gia,soluong, hinhanh, iddiadiem} = req.body;
